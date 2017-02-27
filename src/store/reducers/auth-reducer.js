@@ -23,7 +23,7 @@ const InitalState = {
     user: null
 };
 
-export const authReducer = function (state = InitalState, action) {
+ const authReducer = function (state = InitalState, action) {
 
     switch (action.type) {
 
@@ -51,3 +51,5 @@ export const authReducer = function (state = InitalState, action) {
             return state;
     }
 }
+
+export default authReducer

@@ -10,5 +10,5 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const ADDUSER_ERROR = 'ADDUSER_ERROR';
 export const ADDUSER_SUCCESS = 'ADDUSER_SUCCESS';
 export const SIGN_IN = 'SIGN_IN';
-export const SIGN_OUT= 'SIGN_OUT';
+export const SIGN_OUT = 'SIGN_OUT';
 export const REGISTER = 'REGISTER';

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^1.1.4",
     "react-scripts": "0.9.0"
   },
   "dependencies": {

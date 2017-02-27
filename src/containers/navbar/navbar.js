@@ -1,19 +1,19 @@
 /**
  * Created by Anonmous on 2/27/2017.
  */
-import React, { Component, PropTypes } from 'react'
-import { Link } from 'react-router'
+import React, {Component, PropTypes} from 'react'
+import {Link} from 'react-router'
 import firebase from 'firebase';
-import { authActions } from '../../store/actions/auth-action';
+import {authActions} from '../../store/actions/auth-action';
 import {browserHistory} from 'react-router';
 // redux/firebase
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 // ...
 
 // Components
 import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
-const buttonStyle = { color: 'white' };
+const buttonStyle = {color: 'white'};
 
 class Navbar extends Component {
 
@@ -31,10 +31,10 @@ class Navbar extends Component {
         browserHistory.push('/')
     };
 
-    render () {
-        const { auth } = this.props;
+    render() {
+        const {auth} = this.props;
         const mainMenu = (
-            <div className='Navbar-Main-Menu' >
+            <div className='Navbar-Main-Menu'>
                 <FlatButton
                     label='Sign Up'
                     style={buttonStyle}
@@ -48,7 +48,7 @@ class Navbar extends Component {
             </div>
         )
 
-        const rightMenu = auth.auth ? (
+        const rightMenu = auth.auth.user ? (
                 <FlatButton
                     label='LogOut'
                     style={buttonStyle}
@@ -68,10 +68,10 @@ class Navbar extends Component {
          />
          )*/
 
-        return(
+        return (
             <div>
 
-                <AppBar title="SMART" className='Navbar' showMenuIconButton={false} iconElementRight={rightMenu} />
+                <AppBar title="SMART BOOK" className='Navbar' showMenuIconButton={false} iconElementRight={rightMenu}/>
 
             </div>
         )
@@ -85,7 +85,7 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
     //console.log(state)
-    return { auth: state };
+    return {auth: state};
 };
 
 export default connect(mapStateToProps, authActions)(Navbar);

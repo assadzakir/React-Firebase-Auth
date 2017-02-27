@@ -8,8 +8,8 @@ import RaisedButton from 'material-ui/RaisedButton'
 
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-const fieldStyle = { width: '80%' }
-const buttonStyle = { width: '100%' }
+const fieldStyle = {width: '80%'}
+const buttonStyle = {width: '100%'}
 
 export default class SignupForm extends Component {
 
@@ -19,7 +19,7 @@ export default class SignupForm extends Component {
         onSignup: PropTypes.func.isRequired
     }
 
-    state = { errors: {} }
+    state = {errors: {}}
 
     reset = () =>
         this.setState({
@@ -31,12 +31,12 @@ export default class SignupForm extends Component {
 
     handleSignup = e => {
         e.preventDefault()
-        const { firstName,lastName,email, password, errors } = this.state
-        if ( !email || !password) {
-            if (!username) errors.username = 'Username Is Required'
+        const {firstName, lastName, email, password, errors} = this.state
+        if (!email || !password) {
+            if (!firstName) errors.firstName = 'Username Is Required'
             if (!email) errors.email = 'Username Is Required'
             if (!password) errors.password = 'Username Is Required'
-            return this.setState({ errors })
+            return this.setState({errors})
         }
         console.log(this.state)
         this.props.onSignup(this.state)
@@ -49,35 +49,39 @@ export default class SignupForm extends Component {
      ,role:event.nativeEvent.target.innerText
      });*/
 
-    render () {
-        /*    const items = [
-         <MenuItem key={1} value={1} primaryText="User" />,
-         <MenuItem key={2} value={2} primaryText="Company" />,
-         ];*/
+    render() {
         return (
-            <form style={{padding: '16px',margin:'0px'}} className='LoginForm'  onSubmit={this.handleSignup}>
+            <form style={{padding: '16px', margin: '0px'}} className='LoginForm' onSubmit={this.handleSignup}>
 
                 <TextField
                     hintText='First Name'
                     floatingLabelText='First Name'
-                    onChange={({ target }) => { this.setState({firstName: target.value}) }}
+                    onChange={({target}) => {
+                        this.setState({firstName: target.value})
+                    }}
                     style={fieldStyle}/>
                 <TextField
                     hintText='Last Name'
                     floatingLabelText='Last Name'
-                    onChange={({ target }) => { this.setState({lastName: target.value}) }}
+                    onChange={({target}) => {
+                        this.setState({lastName: target.value})
+                    }}
                     style={fieldStyle}/>
 
                 <TextField
                     hintText='Email'
                     floatingLabelText='Email'
-                    onChange={({ target }) => { this.setState({email: target.value}) }}
+                    onChange={({target}) => {
+                        this.setState({email: target.value})
+                    }}
                     style={fieldStyle}
                 />
                 <TextField
                     hintText='password'
                     floatingLabelText='Password'
-                    onChange={({ target }) => { this.setState({password: target.value}) }}
+                    onChange={({target}) => {
+                        this.setState({password: target.value})
+                    }}
                     style={fieldStyle}
                     type='password'
                 />
