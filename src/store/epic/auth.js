@@ -1,9 +1,9 @@
 /**
  * Created by Anonmous on 2/27/2017.
  */
-import {Observable} from "rxjs";
-import {ActionsObservable} from "redux-observable";
-import {browserHistory} from 'react-router'; // http://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router
+import { Observable } from "rxjs";
+import { ActionsObservable } from "redux-observable";
+import { browserHistory } from 'react-router'; // http://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router
 
 
 import {
@@ -20,7 +20,7 @@ import {
 } from '../../store/actions';
 
 import firebase from 'firebase';
-import {firebaseAuth, firebaseDb} from '../../config/firebase';
+import { firebaseAuth, firebaseDb } from '../../config/firebase';
 
 
 export function setLocalStorage(pro, userObj) {

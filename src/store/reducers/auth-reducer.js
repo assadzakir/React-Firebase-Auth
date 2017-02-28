@@ -23,7 +23,7 @@ const InitalState = {
     user: null
 };
 
- const authReducer = function (state = InitalState, action) {
+const authReducer = function (state = InitalState, action) {
 
     switch (action.type) {
 
@@ -32,21 +32,21 @@ const InitalState = {
         case SIGN_IN_SUCCESS:
             return Object.assign({}, state, { isProcessing: false, isAuthenticated: true, isLoading: false, isLoggedin: true, user: action.payload });
         case SIGN_IN_ERROR:
-            return Object.assign({}, state, { isLoading: false  });
+            return Object.assign({}, state, { isLoading: false });
 
         case SIGN_OUT:
-            return Object.assign({}, state, { isProcessing: true ,user: null});
+            return Object.assign({}, state, { isProcessing: true, user: null });
         case SIGN_OUT_ERROR:
             return Object.assign({}, state, { isProcessing: false, isLoading: false, isLoggedin: false, user: null });
         case SIGN_OUT_SUCCESS:
-            return Object.assign({}, state, { isLoading: false, isLoggedin: false});
+            return Object.assign({}, state, { isLoading: false, isLoggedin: false });
 
         case REGISTER:
             return Object.assign({}, state, { isProcessing: true });
         case REGISTER_ERROR:
             return Object.assign({}, state, { isLoading: false });
         case REGISTER_SUCCESS:
-            return Object.assign({}, state, {isProcessing: false ,isLoading: false, isRegistered: true });
+            return Object.assign({}, state, { isProcessing: false, isLoading: false, isRegistered: true });
         default:
             return state;
     }

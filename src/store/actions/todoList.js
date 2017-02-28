@@ -5,38 +5,38 @@ export default class TodoListAction {
     static DELETE_TODO = "DELETE_TODO";
     static TOGGLE_TODO = "TOGGLE_TODO";
 
-    static addTodo(todoItemDescription){
-        return { 
+    static addTodo(todoItemDescription) {
+        return {
             type: TodoListAction.ADD_TODO,
-            payload : {
+            payload: {
                 text: todoItemDescription,
-                completed : false
+                completed: false
             }
         }
     }
 
-    static deleteTodo(id,index){
-        return { 
+    static deleteTodo(id, index) {
+        return {
             type: TodoListAction.DELETE_TODO,
             itemIndex: index,
-            id:id
+            id: id
         }
     }
 
-    static updateTodo(id,itemIndex,updateTodoText){
-        return { 
+    static updateTodo(id, itemIndex, updateTodoText) {
+        return {
             type: TodoListAction.UPDATE_TODO,
             text: updateTodoText,
             itemIndex: itemIndex,
-            id:id
+            id: id
         }
     }
 
-    static toggleTodo(id,index){
-        return { 
+    static toggleTodo(id, index) {
+        return {
             type: TodoListAction.TOGGLE_TODO,
             itemIndex: index,
-            id:id
+            id: id
         }
     }
 }

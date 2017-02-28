@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Route, IndexRoute, Router} from 'react-router'
+import { Route, IndexRoute, Router } from 'react-router'
 import App from './containers/app/app';
 import signin from './containers/signin/signin';
 import signup from './containers/signup/signup';
 import './index.css';
 import store from './store'
-import {Provider} from 'react-redux'
-import {browserHistory} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
+import { Provider } from 'react-redux'
+import { browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // ...
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -23,9 +23,9 @@ ReactDOM.render(
         <MuiThemeProvider>
             <Router history={syncedHistory}>
                 <Route path='/' component={App}>
-                    <IndexRoute component={signup}/>
-                    <Route path='signup' component={signup}/>
-                    <Route path='signin' component={signin}/>
+                    <IndexRoute component={signup} />
+                    <Route path='signup' component={signup} />
+                    <Route path='signin' component={signin} />
                 </Route>
             </Router>
         </MuiThemeProvider>

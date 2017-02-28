@@ -1,4 +1,4 @@
-import { createStore,applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
@@ -11,9 +11,9 @@ import authReducer from './reducers/auth-reducer';
 
 export const rootReducer = combineReducers({
     TodoListReducer,
-    auth:authReducer,
-    routing:routerReducer
-// more reducers go here
+    auth: authReducer,
+    routing: routerReducer
+    // more reducers go here
 });
 
 
@@ -28,10 +28,10 @@ const rootEpic = combineEpics(
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
 
-let store = createStore(rootReducer,applyMiddleware(epicMiddleware));
+let store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
 store.subscribe(() =>
-  console.log(store.getState())
+    console.log(store.getState())
 );
 
 export default store;

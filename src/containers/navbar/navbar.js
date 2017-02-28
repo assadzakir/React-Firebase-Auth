@@ -1,19 +1,19 @@
 /**
  * Created by Anonmous on 2/27/2017.
  */
-import React, {Component, PropTypes} from 'react'
-import {Link} from 'react-router'
+import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import firebase from 'firebase';
-import {authActions} from '../../store/actions/auth-action';
-import {browserHistory} from 'react-router';
+import { authActions } from '../../store/actions/auth-action';
+import { browserHistory } from 'react-router';
 // redux/firebase
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 // ...
 
 // Components
 import AppBar from 'material-ui/AppBar'
 import FlatButton from 'material-ui/FlatButton'
-const buttonStyle = {color: 'white'};
+const buttonStyle = { color: 'white' };
 
 class Navbar extends Component {
 
@@ -49,12 +49,12 @@ class Navbar extends Component {
         )
 
         const rightMenu = auth.auth.user ? (
-                <FlatButton
-                    label='LogOut'
-                    style={buttonStyle}
-                    onClick={this.handleLogin}
-                />
-            ) : mainMenu;
+            <FlatButton
+                label='LogOut'
+                style={buttonStyle}
+                onClick={this.handleLogin}
+            />
+        ) : mainMenu;
 
         /* return (
          <AppBar
@@ -71,7 +71,7 @@ class Navbar extends Component {
         return (
             <div>
 
-                <AppBar title="SMART BOOK" className='Navbar' showMenuIconButton={false} iconElementRight={rightMenu}/>
+                <AppBar title="SMART BOOK" className='Navbar' showMenuIconButton={false} iconElementRight={rightMenu} />
 
             </div>
         )
@@ -85,7 +85,7 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
     //console.log(state)
-    return {auth: state};
+    return { auth: state };
 };
 
 export default connect(mapStateToProps, authActions)(Navbar);

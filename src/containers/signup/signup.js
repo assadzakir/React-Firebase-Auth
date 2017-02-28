@@ -1,12 +1,12 @@
 /**
  * Created by Anonmous on 2/27/2017.
  */
-import React, {Component, PropTypes} from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
-import {browserHistory} from 'react-router';
-import {authActions} from '../../store/actions';
+import { browserHistory } from 'react-router';
+import { authActions } from '../../store/actions';
 
 // Components
 import SignupForm from '../../components/signup/signup'
@@ -25,7 +25,7 @@ class signup extends Component {
 
     state = {
         snackCanOpen: false,
-        errors: {username: null, password: null}
+        errors: { username: null, password: null }
     }
 
 
@@ -38,7 +38,7 @@ class signup extends Component {
         })
 
     handleSignup = ({email, password, firstName, lastName}) => {
-        this.props.registerWithCustom({email, password, firstName, lastName})
+        this.props.registerWithCustom({ email, password, firstName, lastName })
         browserHistory.push('/signin')
     }
 
@@ -46,9 +46,9 @@ class signup extends Component {
     render() {
 
         return (
-            <div className='Login' style={{marginLeft: '340px', marginTop: '67px', width: '50%'}}>
+            <div className='Login' style={{ marginLeft: '340px', marginTop: '67px', width: '50%' }}>
                 <Paper className='Login-Panel'>
-                    <SignupForm onSignup={this.handleSignup}/>
+                    <SignupForm onSignup={this.handleSignup} />
                 </Paper>
             </div>
         )
