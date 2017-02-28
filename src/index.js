@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, IndexRoute, Router } from 'react-router'
 import App from './containers/app/app';
+import Home from './components/home/home'
 import signin from './containers/signin/signin';
 import signup from './containers/signup/signup';
 import './index.css';
@@ -23,7 +24,7 @@ ReactDOM.render(
         <MuiThemeProvider>
             <Router history={syncedHistory}>
                 <Route path='/' component={App}>
-                    <IndexRoute component={signup} />
+                    <IndexRoute component={Home} />
                     <Route path='signup' component={signup} />
                     <Route path='signin' component={signin} />
                 </Route>
